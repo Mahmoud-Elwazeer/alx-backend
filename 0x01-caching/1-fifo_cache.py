@@ -11,8 +11,6 @@ class FIFOCache(BaseCaching):
         if key is None or item is None:
             pass
         if (key in self.cache_data):
-            if self.cache_data.get(key) == item:
-                return
             del self.cache_data[key]
             self.cache_data[key] = item
             return
@@ -28,4 +26,8 @@ class FIFOCache(BaseCaching):
         if key is None:
             return None
 
-        return self.cache_data.get(key)
+        try:
+            value = self.cache_data.get(key)
+            return value
+        except Exception:
+            return None
