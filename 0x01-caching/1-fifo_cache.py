@@ -8,7 +8,7 @@ class FIFOCache(BaseCaching):
     def __init__(self):
         """init function"""
         super().__init__()
-    
+
     def put(self, key, item):
         """put key, value in dict"""
         if key is None or item is None:
@@ -20,7 +20,7 @@ class FIFOCache(BaseCaching):
             self.cache_data[key] = item
         else:
             self.cache_data[key] = item
-    
+
     def get(self, key):
         """get key"""
         if key is None:
