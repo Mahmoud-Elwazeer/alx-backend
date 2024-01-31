@@ -19,12 +19,10 @@ class LIFOCache(BaseCaching):
             del self.cache_data[rm_key]
             print("DISCARD: {}".format(rm_key))
         self.cache_data[key] = item
-    
+
     def get(self, key):
         """return specific value"""
         if key is None:
             return None
-        
+
         return self.cache_data.get(key)
-
-
