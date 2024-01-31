@@ -14,6 +14,7 @@ class FIFOCache(BaseCaching):
             if (key in self.cache_data) and self.cache_data[key] == item:
                 return
             elif (key in self.cache_data):
+                del self.cache_data[key]
                 self.cache_data[key] = item
                 return
             rm_key = list(self.cache_data.keys())[0]
