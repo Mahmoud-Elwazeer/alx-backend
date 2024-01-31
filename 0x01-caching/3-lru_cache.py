@@ -4,7 +4,7 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """LRU cache"""
+    """LRU cache inhertis from BaseCaching"""
     def put(self, key, item):
         """put key, value using LRU cache"""
         if key in self.cache_data:
