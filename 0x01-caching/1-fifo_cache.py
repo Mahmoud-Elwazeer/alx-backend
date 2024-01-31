@@ -7,7 +7,7 @@ class FIFOCache(BaseCaching):
     """FIFO Cashe"""
 
     def put(self, key, item):
-        """put key, value in dict"""
+        """put key, value pair in dict"""
         if key is None or item is None:
             pass
         if (len(self.cache_data) >= BaseCaching.MAX_ITEMS):
@@ -20,7 +20,7 @@ class FIFOCache(BaseCaching):
         self.cache_data[key] = item
 
     def get(self, key):
-        """get key"""
+        """get specific value"""
         if key is None:
             return None
 
