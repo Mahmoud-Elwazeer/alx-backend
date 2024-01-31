@@ -5,8 +5,6 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 class FIFOCache(BaseCaching):
     """FIFO Cashe"""
-    def __init__(self):
-        super.__init__()
 
     def put(self, key, item):
         """put key, value pair in dict"""
