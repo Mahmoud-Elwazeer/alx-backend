@@ -3,10 +3,10 @@
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class LRUCache(BaseCaching):
-    """LRU cache inhertis from BaseCaching"""
+class MRUCache(BaseCaching):
+    """MRU Cache  inherits from BaseCaching"""
     def put(self, key, item):
-        """put key, value using LRU cache"""
+        """insert key, value using MRUCache"""
         if key is None or item is None:
             return
 
@@ -16,9 +16,10 @@ class LRUCache(BaseCaching):
             return
 
         if (len(self.cache_data) >= BaseCaching.MAX_ITEMS):
-            rm_key = list(self.cache_data.keys())[0]
+            rm_key = list(self.cache_data.keys())[3]
             del self.cache_data[rm_key]
             print("DISCARD: {}".format(rm_key))
+
         self.cache_data[key] = item
 
     def get(self, key):
