@@ -11,9 +11,9 @@ class LIFOCache(BaseCaching):
         if key is None or item is None:
             return
         if (key in self.cache_data):
-                del self.cache_data[key]
-                self.cache_data[key] = item
-                return
+            del self.cache_data[key]
+            self.cache_data[key] = item
+            return
         if (len(self.cache_data) >= BaseCaching.MAX_ITEMS):
             rm_key = list(self.cache_data.keys())[3]
             del self.cache_data[rm_key]
