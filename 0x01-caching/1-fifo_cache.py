@@ -9,7 +9,7 @@ class FIFOCache(BaseCaching):
     def put(self, key, item):
         """put key, value pair in dict"""
         if key is None or item is None:
-            pass
+            return
         if (key in self.cache_data):
             del self.cache_data[key]
             self.cache_data[key] = item
