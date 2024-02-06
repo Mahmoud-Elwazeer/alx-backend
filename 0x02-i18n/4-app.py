@@ -33,7 +33,7 @@ app.config.from_object(Config)
 def get_locale():
     """ determine the best match with our supported languages."""
     locale = request.args.get("locale")
-    if locale in app.config['LANGUAGES']:
+    if locale in Config.LANGUAGES:
         return locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
