@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """import libraries"""
 
-from flask import Flask, template_rendered
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     """render home page"""
-    return template_rendered('0-index.html')
+    return render_template('0-index.html')
 
 
 if __name__ == '__main__':
