@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
+#: templates/3-index.html:6
 msgid "home_title"
 msgstr "Welcome to Holberton"
 
