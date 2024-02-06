@@ -16,26 +16,26 @@ class Config(object):
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
-def get_locale():
-    """ determine the best match with our supported languages."""
-    locale = request.args.get("locale")
-    if locale in app.config['LANGUAGES']:
-        return locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-
-
-babel = Babel(app, default_locale=get_locale)
-# babel = Babel(app)
-app.config.from_object(Config)
-
-
-# @babel.localeselector
 # def get_locale():
 #     """ determine the best match with our supported languages."""
 #     locale = request.args.get("locale")
 #     if locale in app.config['LANGUAGES']:
 #         return locale
 #     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+
+# babel = Babel(app, default_locale=get_locale)
+babel = Babel(app)
+app.config.from_object(Config)
+
+
+@babel.localeselector
+def get_locale():
+    """ determine the best match with our supported languages."""
+    locale = request.args.get("locale")
+    if locale in app.config['LANGUAGES']:
+        return locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route("/", strict_slashes=False)
