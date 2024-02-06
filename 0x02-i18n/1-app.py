@@ -17,6 +17,7 @@ app = Flask(__name__)
 babel = Babel(app)
 app.config.from_object(Config)
 
+
 @app.route("/", strict_slashes=False)
 def home():
     """render home page"""
