@@ -6,9 +6,9 @@ const client = createClient();
 
 // Handling errors
 client.on('error', (err) => {
-    console.log(`Redis client not connected to the server: ${err}`);
+  console.log(`Redis client not connected to the server: ${err}`);
 });
 
 client.on('connect', () => {
-    console.log('Redis client connected to the server')
+  console.log('Redis client connected to the server')
 });
